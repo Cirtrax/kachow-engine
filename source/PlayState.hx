@@ -1844,15 +1844,15 @@ class PlayState extends MusicBeatState
 		rating.screenCenter();
 		rating.x = coolText.x - 40;
 		rating.y -= 60;
-		rating.acceleration.y = 550;
-		rating.velocity.y -= FlxG.random.int(140, 175);
-		rating.velocity.x -= FlxG.random.int(0, 10);
+		rating.acceleration.y = FlxG.random.int(-100, 100);
+		rating.velocity.y -= FlxG.random.int(0, 1000);
+		rating.velocity.x -= FlxG.random.int(0, 1000);
 
 		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
 		comboSpr.screenCenter();
 		comboSpr.x = coolText.x;
-		comboSpr.acceleration.y = 600;
-		comboSpr.velocity.y -= 150;
+		comboSpr.acceleration.y = FlxG.random.int(0, 1000);
+		comboSpr.velocity.y -= FlxG.random.int(0, 1000);
 
 		comboSpr.velocity.x += FlxG.random.int(1, 10);
 		add(rating);
@@ -2241,10 +2241,10 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim('singRIGHT', true);
 			}
 
-			if (FlxG.random.bool(5) && Main.randomCrash)
-				{
-					System.exit(0);
-				}
+			// if (FlxG.random.bool(5) && Main.randomCrash)
+			// 	{
+			// 		System.exit(0);
+			// 	}
 
 			
 			playerStrums.forEach(function(spr:FlxSprite)
